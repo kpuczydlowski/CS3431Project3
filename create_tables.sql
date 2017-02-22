@@ -52,12 +52,14 @@ CREATE TABLE EquiptmentType
 
 CREATE TABLE RoomService
 		(roomNum INTEGER References Room(num),
-		 service Varchar(20)
+		 service Varchar(20),
+		 PRIMARY KEY (roomNum)
 		);
 
 CREATE TABLE RoomAccess
 		(roomNum INTEGER References Room(num),
-		 EmpID INTEGER References Employee(ID)
+		 EmpID INTEGER References Employee(ID),
+		 PRIMARY KEY (roomNum)
 		);
 
 CREATE TABLE Patient
