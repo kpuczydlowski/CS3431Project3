@@ -186,13 +186,13 @@ INSERT INTO Admission (Num, AdmissionDate, LeaveDate, TotalPayment, InsurancePay
 VALUES (3, '04-JAN-2013', '05-JAN-2013', 3000, 4000, '000000002');
 
 INSERT INTO Admission (Num, AdmissionDate, LeaveDate, TotalPayment, InsurancePayment, Patient_SSN)
-VALUES (4, '05-JAN-2013', '07-JAN-2013', 3000, 4000, '000000003');
+VALUES (4, '05-JAN-2013', '07-JAN-2013', 3000, 4000, '000000002');
 
 INSERT INTO Admission (Num, AdmissionDate, LeaveDate, TotalPayment, InsurancePayment, Patient_SSN)
-VALUES (5, '05-JAN-2013', '03-JAN-2013', 3000, 4000, '000000003');
+VALUES (5, '05-JAN-2013', '03-JAN-2013', 3000, 4000, '000000002');
 
 INSERT INTO Admission (Num, AdmissionDate, LeaveDate, TotalPayment, InsurancePayment, Patient_SSN)
-VALUES (6, '06-JAN-2013', '07-JAN-2013', 3000, 4000, '000000004');
+VALUES (6, '06-JAN-2013', '07-JAN-2013', 3000, 4000, '000000002');
 
 INSERT INTO Admission (Num, AdmissionDate, LeaveDate, TotalPayment, InsurancePayment, Patient_SSN)
 VALUES (7, '08-JAN-2013', '09-JAN-2013', 3000, 4000, '000000004');
@@ -278,6 +278,15 @@ VALUES (2, 11, '21-JAN-2013', '23-JAN-2013');
 INSERT INTO StayIn (AdmissionNum, roomNum, startDate, endDate)
 VALUES (3, 11, '21-JAN-2013', '23-JAN-2013');
 
+INSERT INTO StayIn (AdmissionNum, roomNum, startDate, endDate)
+VALUES (4, 11, '21-JAN-2013', '23-JAN-2013');
+
+INSERT INTO StayIn (AdmissionNum, roomNum, startDate, endDate)
+VALUES (5, 11, '21-JAN-2013', '23-JAN-2013');
+
+INSERT INTO StayIn (AdmissionNum, roomNum, startDate, endDate)
+VALUES (6, 11, '21-JAN-2013', '23-JAN-2013');
+
 INSERT INTO  Employee (ID, FName, LName, Salary, OfficeNum, jobTitle, empRank, supervisorID)
 VALUES (14, 'e4', 'e44', 100000, 211, 'gen0', 'General', NULL);
 
@@ -330,5 +339,6 @@ VALUES (9, 'E10', 'L1', 3000, 1, 'Employee', 'Regular', 10);
 /*	Test Case for create_views	*/
 INSERT INTO Patient (SSN, FName, LName, Address, TelNum)
 VALUES ('100000001', 'P1', 'Alco', 'Turkey', '8889999898');
+
 INSERT INTO Patient (SSN, FName, LName, Address, TelNum)
 VALUES ('100000002', 'P2', 'Alco', 'Turkey', '8889999899');

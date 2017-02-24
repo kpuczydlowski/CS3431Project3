@@ -28,3 +28,9 @@ Create or Replace View DoctorsLoad as
 
 Select * from DoctorsLoad;
 
+CREATE or Replace VIEW CriticalCasesFour as
+	Select *
+	from CriticalCases
+	Where numICU > 4;
+
+Select * from CriticalCasesFour;
