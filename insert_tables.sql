@@ -95,38 +95,47 @@ VALUES (9, 1);
 INSERT INTO Room (num, occupied)
 VALUES (10, 1);
 
+INSERT INTO Room (num, occupied)
+VALUES (11, 0);
+
+INSERT INTO Room (num, occupied)
+VALUES (12, 0);
+
 INSERT INTO RoomService (roomNum, service)
 VALUES (1, 'Defibilator');
 
 INSERT INTO RoomService (roomNum, service)
-VALUES (1, 'EKG');
+VALUES (2, 'EKG');
 
 INSERT INTO RoomService (roomNum, service)
-VALUES (2, 'Heart Monitor');
+VALUES (3, 'Heart Monitor');
 
 INSERT INTO RoomService (roomNum, service)
-VALUES (2, 'Kolonoscope');
+VALUES (4, 'Kolonoscope');
 
 INSERT INTO RoomService (roomNum, service)
-VALUES (2, 'Sink');
+VALUES (5, 'Sink');
 
 INSERT INTO RoomService (roomNum, service)
-VALUES (3, 'Medicine Cabinet');
+VALUES (6, 'Medicine Cabinet');
 
 INSERT INTO RoomService (roomNum, service)
-VALUES (4, 'Pressurized Room');
+VALUES (7, 'Pressurized Room');
 
 INSERT INTO RoomService (roomNum, service)
-VALUES (4, 'Medicine Cabinet');
-
-INSERT INTO RoomService (roomNum, service)
-VALUES (6, 'Defibilator');
-
-INSERT INTO RoomService (roomNum, service)
-VALUES (8, 'Defibilator');
+VALUES (8, 'Medicine Cabinet');
 
 INSERT INTO RoomService (roomNum, service)
 VALUES (9, 'Defibilator');
+
+INSERT INTO RoomService (roomNum, service)
+VALUES (10, 'Defibilator');
+
+INSERT INTO RoomService (roomNum, service)
+VALUES (11, 'ICU');
+
+INSERT INTO RoomService (roomNum, service)
+VALUES (12, 'ICU');
 
 INSERT INTO Equipment (serialNum, TypeID, purchaseYear, LastInspecton, roomNum)
 VALUES ('A01-02X', 0, 2012, '31-AUG-06', 1);
@@ -263,6 +272,11 @@ VALUES (8, 15, 'WAS fine no treatment needed lol jk got cancer');
 INSERT INTO StayIn (AdmissionNum, roomNum, startDate, endDate)
 VALUES (1, 2, '21-JAN-2013', '23-JAN-2013');
 
+INSERT INTO StayIn (AdmissionNum, roomNum, startDate, endDate)
+VALUES (2, 11, '21-JAN-2013', '23-JAN-2013');
+
+INSERT INTO StayIn (AdmissionNum, roomNum, startDate, endDate)
+VALUES (3, 11, '21-JAN-2013', '23-JAN-2013');
 
 INSERT INTO  Employee (ID, FName, LName, Salary, OfficeNum, jobTitle, empRank, supervisorID)
 VALUES (14, 'e4', 'e44', 100000, 211, 'gen0', 'General', NULL);
@@ -312,3 +326,9 @@ VALUES (8, 'E9', 'L1', 3000, 1, 'Employee', 'Regular', 10);
 INSERT INTO Employee (ID, FName, LName, Salary, OfficeNum, jobTitle, empRank, supervisorID)
 VALUES (9, 'E10', 'L1', 3000, 1, 'Employee', 'Regular', 10);
 
+
+/*	Test Case for create_views	*/
+INSERT INTO Patient (SSN, FName, LName, Address, TelNum)
+VALUES ('100000001', 'P1', 'Alco', 'Turkey', '8889999898');
+INSERT INTO Patient (SSN, FName, LName, Address, TelNum)
+VALUES ('100000002', 'P2', 'Alco', 'Turkey', '8889999899');

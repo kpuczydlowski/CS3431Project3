@@ -44,8 +44,7 @@ Select roomNum
 From Equipment
 Where serialNum = 'A01-02X';
 
-/*Q6: Report the employee who has access to the largest number of rooms. We need the
-employee ID, and the number of rooms (s)he can access. */
+/*Q6: Report the employee who has access to the largest number of rooms. We need the employee ID, and the number of rooms (s)he can access. */
 Select E.ID, room_count.cnt as maxRooms
 From Employee E,
 	 (Select EmpID as ID, count(*) as cnt
