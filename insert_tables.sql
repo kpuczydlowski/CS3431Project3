@@ -225,49 +225,49 @@ INSERT INTO FutureVisit (visitNum, visitDate)
 VALUES (15, '09-AUG-2014');
 
 INSERT INTO Examine (doctorID, AdmissionNum, comments)
-VALUES (1, 1, 'WAS fine no treatment needed lol jk got cancer');
+VALUES (1, 1, 'c1');
 
 INSERT INTO Examine (doctorID, AdmissionNum, comments)
-VALUES (3, 2, 'WAS fine no treatment needed lol jk got cancer');
+VALUES (3, 2, 'c2');
 
 INSERT INTO Examine (doctorID, AdmissionNum, comments)
-VALUES (4, 3, 'WAS fine no treatment needed lol jk got cancer');
+VALUES (4, 3, 'c3');
 
 INSERT INTO Examine (doctorID, AdmissionNum, comments)
-VALUES (2, 4, 'WAS fine no treatment needed lol jk got cancer');
+VALUES (2, 4, 'c4');
 
 INSERT INTO Examine (doctorID, AdmissionNum, comments)
-VALUES (1, 5, 'WAS fine no treatment needed lol jk got cancer');
+VALUES (1, 5, 'c5');
 
 INSERT INTO Examine (doctorID, AdmissionNum, comments)
-VALUES (6, 6, 'WAS fine no treatment needed lol jk got cancer');
+VALUES (6, 6, 'c6');
 
 INSERT INTO Examine (doctorID, AdmissionNum, comments)
-VALUES (7, 7, 'WAS fine no treatment needed lol jk got cancer');
+VALUES (7, 7, 'c7');
 
 INSERT INTO Examine (doctorID, AdmissionNum, comments)
-VALUES (1, 8, 'WAS fine no treatment needed lol jk got cancer');
+VALUES (1, 8, 'c8');
 
 INSERT INTO Examine (doctorID, AdmissionNum, comments)
-VALUES (1, 9, 'WAS fine no treatment needed lol jk got cancer');
+VALUES (1, 9, 'c9');
 
 INSERT INTO Examine (doctorID, AdmissionNum, comments)
-VALUES (2, 10, 'WAS fine no treatment needed lol jk got cancer');
+VALUES (2, 10, 'c10');
 
 INSERT INTO Examine (doctorID, AdmissionNum, comments)
-VALUES (2, 11, 'WAS fine no treatment needed lol jk got cancer');
+VALUES (2, 11, 'c1');
 
 INSERT INTO Examine (doctorID, AdmissionNum, comments)
-VALUES (3, 12, 'WAS fine no treatment needed lol jk got cancer');
+VALUES (3, 12, 'c1');
 
 INSERT INTO Examine (doctorID, AdmissionNum, comments)
-VALUES (8, 13, 'WAS fine no treatment needed lol jk got cancer');
+VALUES (8, 13, 'c1');
 
 INSERT INTO Examine (doctorID, AdmissionNum, comments)
-VALUES (8, 14, 'WAS fine no treatment needed lol jk got cancer');
+VALUES (8, 14, 'c1');
 
 INSERT INTO Examine (doctorID, AdmissionNum, comments)
-VALUES (8, 15, 'WAS fine no treatment needed lol jk got cancer');
+VALUES (8, 15, 'c1');
 
 INSERT INTO StayIn (AdmissionNum, roomNum, startDate, endDate)
 VALUES (1, 2, '21-JAN-2013', '23-JAN-2013');
