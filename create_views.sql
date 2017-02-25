@@ -49,14 +49,4 @@ CREATE or Replace VIEW CriticalCaseUnderload as
 			A.Num = E.AdmissionNum and
 			A.Patient_SSN = CC.Patient_SSN;
 
-Create or Replace Trigger ThreeServiceTrigger
-	BEFORE INSERT OR UPDATE OF roomNum ON RoomService
-	For each row
-	BEGIN
-		(Select RS.service from RoomService RS Where :new.roomNum = RS.roomNum Group By RS.service having count(RS.service) > 2) s;
-		If (s is not null)  Then
-			RAISE_APPLICATION_ERROR(-1, 'error');
-		end If;
-	End;
-	/
 

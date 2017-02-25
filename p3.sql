@@ -2,3 +2,4 @@
 @insert_tables.sql
 @query_tables.sql
 @create_views.sql
+@create_triggers.sql

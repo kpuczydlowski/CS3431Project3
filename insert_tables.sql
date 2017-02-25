@@ -138,40 +138,40 @@ INSERT INTO RoomService (roomNum, service)
 VALUES (12, 'ICU');
 
 INSERT INTO Equipment (serialNum, TypeID, purchaseYear, LastInspecton, roomNum)
-VALUES ('A01-02X', 0, 2012, '31-AUG-06', 1);
+VALUES ('A01-02X', 'MRI', 2012, '31-AUG-06', 1);
 
 INSERT INTO Equipment (serialNum, TypeID, purchaseYear, LastInspecton, roomNum)
-VALUES ('A01-02E', 0, 2011, '31-AUG-06', 1);
+VALUES ('A01-02E', 'MRI', 2011, '31-AUG-06', 1);
 
 INSERT INTO Equipment (serialNum, TypeID, purchaseYear, LastInspecton, roomNum)
-VALUES ('A01-02B', 0, 2009, '13-JUN-06', 1);
+VALUES ('A01-02B', 'MRI', 2009, '13-JUN-06', 1);
 
 INSERT INTO Equipment (serialNum, TypeID, purchaseYear, LastInspecton, roomNum)
-VALUES ('B01-02X', 1, 2013, '09-AUG-03', 3);
+VALUES ('B01-02X', 'MRI', 2013, '09-AUG-03', 3);
 
 INSERT INTO Equipment (serialNum, TypeID, purchaseYear, LastInspecton, roomNum)
-VALUES ('B01-02C', 1, 2000, '31-AUG-06', 4);
+VALUES ('B01-02C', 'MRI', 2000, '31-AUG-06', 4);
 
 INSERT INTO Equipment (serialNum, TypeID, purchaseYear, LastInspecton, roomNum)
-VALUES ('B01-02D', 1, 1999, '31-AUG-06', 5);
+VALUES ('B01-02D', 'MRI', 1999, '31-AUG-06', 5);
 
 INSERT INTO Equipment (serialNum, TypeID, purchaseYear, LastInspecton, roomNum)
-VALUES ('C01-02X', 2, 2003, '03-AUG-06', 2);
+VALUES ('C01-02X', 'MRI', 2003, '03-AUG-06', 2);
 
 INSERT INTO Equipment (serialNum, TypeID, purchaseYear, LastInspecton, roomNum)
-VALUES ('D01-02X', 2, 2011, '31-AUG-06', 7);
+VALUES ('D01-02X', 'MRI', 2011, '31-AUG-06', 7);
 
 INSERT INTO Equipment (serialNum, TypeID, purchaseYear, LastInspecton, roomNum)
-VALUES ('G01-02X', 2, 2010, '31-AUG-06', 3);
+VALUES ('G01-02X', 'MRI', 2010, '31-AUG-06', 3);
 
 INSERT INTO EquiptmentType (ID, model, description, instructions)
-VALUES (0, 'A MODEL 0', 'A DESCRIPTION 1', 'AN INSTUCTION 4');
+VALUES ('MRI', 'A MODEL 0', 'A DESCRIPTION 1', 'AN INSTUCTION 4');
 
 INSERT INTO EquiptmentType (ID, model, description, instructions)
-VALUES (1, 'A MODEL 1', 'A DESCRIPTION 2', 'AN INSTUCTION 5');
+VALUES ('MRI', 'A MODEL 1', 'A DESCRIPTION 2', 'AN INSTUCTION 5');
 
 INSERT INTO EquiptmentType (ID, model, description, instructions)
-VALUES (2, 'A MODEL 2', 'A DESCRIPTION 3', 'AN INSTUCTION 6');
+VALUES ('MRI', 'A MODEL 2', 'A DESCRIPTION 3', 'AN INSTUCTION 6');
 
 INSERT INTO Admission (Num, AdmissionDate, LeaveDate, TotalPayment, InsurancePayment, Patient_SSN)
 VALUES (0, '01-JAN-2013', '02-JAN-2013', 3000, 4000, '000000001');

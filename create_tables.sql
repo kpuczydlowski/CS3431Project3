@@ -36,14 +36,14 @@ CREATE TABLE Employee
 
 CREATE TABLE Equipment
 		(serialNum Varchar(20) Primary Key,
-		 TypeID INTEGER,
+		 TypeID Varchar(20),
 		 purchaseYear INTEGER,
 		 LastInspecton date,
 		 roomNum INTEGER References Room(num)
 		);
 
 CREATE TABLE EquiptmentType
-		(ID INTEGER Primary Key,
+		(ID Varchar(20) Primary Key,
 		 model Varchar(20) not NULL,
 		 description Varchar(100),
 		 instructions Varchar(100)
@@ -53,13 +53,13 @@ CREATE TABLE EquiptmentType
 CREATE TABLE RoomService
 		(roomNum INTEGER References Room(num),
 		 service Varchar(20),
-		 PRIMARY KEY (roomNum)
+		 Constraint pk_rs PRIMARY KEY (roomNum, service)
 		);
 
 CREATE TABLE RoomAccess
 		(roomNum INTEGER References Room(num),
 		 EmpID INTEGER References Employee(ID),
-		 PRIMARY KEY (roomNum)
+		 Constraint pk_ra PRIMARY KEY (roomNum, EmpID)
 		);
 
 CREATE TABLE Patient
