@@ -34,20 +34,22 @@ CREATE TABLE Employee
 		 supervisorID INTEGER References Employee(ID)
 		);
 
-CREATE TABLE Equipment
-		(serialNum Varchar(20) Primary Key,
-		 TypeID Varchar(20),
-		 purchaseYear INTEGER,
-		 LastInspecton date,
-		 roomNum INTEGER References Room(num)
-		);
-
 CREATE TABLE EquiptmentType
-		(ID Varchar(20) Primary Key,
+		(ID Varchar(20),
 		 model Varchar(20) not NULL,
 		 description Varchar(100),
-		 instructions Varchar(100)
+		 instructions Varchar(100),
+		 CONSTRAINT pk_et PRIMARY KEY (ID)
 		 );
+
+CREATE TABLE Equipment
+		(serialNum Varchar(20),
+		 TypeID Varchar(20) References EquiptmentType(ID),
+		 purchaseYear INTEGER,
+		 LastInspecton date,
+		 roomNum INTEGER References Room(num),
+		 CONSTRAINT pk_e PRIMARY KEY (serialNum)
+		);
 
 
 CREATE TABLE RoomService
@@ -90,13 +92,15 @@ CREATE TABLE Admission
 
 CREATE TABLE FutureVisit
 		(visitNum INTEGER References Admission(Num),
-		 visitDate date
+		 visitDate date,
+		 CONSTRAINT pk_fv PRIMARY KEY (visitNum)
 		);
 
 CREATE TABLE Examine
 		(doctorID INTEGER References Doctor(ID),
 		 AdmissionNum INTEGER References Admission(Num),
-		 comments Varchar(100)
+		 comments Varchar(100),
+		 CONSTRAINT pk_ex PRIMARY KEY (doctorID, AdmissionNum)
 		);
 
 CREATE TABLE StayIn
@@ -104,7 +108,8 @@ CREATE TABLE StayIn
 		 roomNum INTEGER References Room(num),
 		 startDate date,
 		 endDate date,
-		 CONSTRAINT datescheck check (startDate <= endDate)
+		 CONSTRAINT datescheck check (startDate <= endDate),
+		 CONSTRAINT pk_si PRIMARY KEY (AdmissionNum, roomNum, startDate)
 		);
 
 
