@@ -12,8 +12,6 @@ Create or Replace Trigger ThreeServices
 	Declare
 		temp Integer;
 	Begin
-		dbms_output.put('Room num ' );
-		dbms_output.put_line(:new.roomNum );
 		Begin
 			Select COUNT(*) into temp
 				from RoomService RS 
@@ -23,9 +21,7 @@ Create or Replace Trigger ThreeServices
 	      		WHEN NO_DATA_FOUND THEN
 	        	temp := 0;
 			END;
-
-		dbms_output.put_line(temp);
-		If(temp > 1) Then
+		If(temp > 2) Then
 			RAISE_APPLICATION_ERROR(-20000, 'Too many services...');
 		End If;
 

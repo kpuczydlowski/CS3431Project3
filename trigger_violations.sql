@@ -19,6 +19,8 @@ VALUES (2002, 'Defibilator2');
 INSERT INTO RoomService (roomNum, service)
 VALUES (2002, 'Defibilator3');
 
+INSERT INTO RoomService (roomNum, service)
+VALUES (2002, 'Defibilator4');
 /*	2	*/
 
 INSERT INTO Patient (SSN, FName, LName, Address, TelNum)
@@ -93,8 +95,6 @@ VALUES (12, 11001, 'c1');
 
 INSERT INTO Admission (Num, AdmissionDate, LeaveDate, TotalPayment, InsurancePayment, Patient_SSN)
 VALUES (11002, '05-JAN-2013', '06-FEB-2013', 3000, 4000, '777888991');
-
-
 
 
 /*		*/
