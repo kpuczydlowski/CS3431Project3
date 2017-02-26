@@ -108,6 +108,7 @@ Create or Replace Trigger ICUinThreeMonths
 		loop
 			If (rec.serv = 'ICU') Then
 				temp := Add_months(:new.startDate, 3);
+				dbms_output.put_line('Inserting ICU');
 				INSERT INTO FutureVisit (visitNum, visitDate)
 				VALUES (:new.AdmissionNum, temp);
 				Exit;
