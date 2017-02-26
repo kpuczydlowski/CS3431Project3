@@ -15,10 +15,10 @@ Create or Replace Trigger ThreeServices
 		dbms_output.put('Room num ' );
 		dbms_output.put_line(:new.roomNum );
 		Begin
-			Select COUNT(service) into temp
+			Select COUNT(*) into temp
 				from RoomService RS 
 				where RS.roomNum = :new.roomNum 
-				Group By service;
+				Group By RS.roomNum;
 			EXCEPTION
 	      		WHEN NO_DATA_FOUND THEN
 	        	temp := 0;
@@ -37,7 +37,9 @@ Create or Replace Trigger CalculateInsPayment
 	For each row
 	Begin
 		:new.InsurancePayment := :new.TotalPayment*0.7;
+		dbms_output.put('Calculated InsurancePayment	');
 		dbms_output.put(:new.InsurancePayment);
+		dbms_output.new_line;
 	End;
 	/
 
@@ -47,20 +49,25 @@ Create or Replace Trigger Manages
 	Declare 
 		temp Varchar(20);
 	Begin
-		Select empRank into temp from Employee E Where E.ID = :new.supervisorID;
+		Begin
+			Select empRank into temp from Employee E Where E.ID = :new.supervisorID;
+		EXCEPTION
+	      		WHEN NO_DATA_FOUND THEN
+	        	temp := null;
+			END;
 		If(:new.empRank = 'Regular') Then
 			If (temp <> 'Division') Then
-				RAISE_APPLICATION_ERROR(-20000, 'Not Manages...');
+				RAISE_APPLICATION_ERROR(-20000, 'Manages Regular violation...');
 			End If;
 		End If;
 		If(:new.empRank = 'Division') Then
 			If (temp <> 'General' ) Then
-				RAISE_APPLICATION_ERROR(-20000, 'Not Manages...');
+				RAISE_APPLICATION_ERROR(-20000, 'Manages Division violation...');
 			End If;
 		End If;
 		If(:new.empRank = 'General') Then
 			If (temp <> 'General' or temp <> null ) Then
-				RAISE_APPLICATION_ERROR(-20000, 'Not Manages...');
+				RAISE_APPLICATION_ERROR(-20000, 'Manages General violation...');
 			End If;
 		End If;
 	End;

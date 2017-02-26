@@ -28,17 +28,24 @@ INSERT INTO Admission (Num, AdmissionDate, LeaveDate, TotalPayment, InsurancePay
 VALUES (0, '01-JAN-2013', '02-JAN-2013', 3000, 4000, '777888992');
 
 /*	3	*/
+
 INSERT INTO  Employee (ID, FName, LName, Salary, OfficeNum, jobTitle, empRank, supervisorID)
-VALUES (100, 'e100', 'e100', 100000, 211, 'gen100', 'General', NULL);
+VALUES (99, 'e103', 'e103', 100000, 2122, 'gen103', 'General', null);
+
+INSERT INTO  Employee (ID, FName, LName, Salary, OfficeNum, jobTitle, empRank, supervisorID)
+VALUES (98, 'e102', 'e102', 100000, 2122, 'div102', 'Division', 99);
+
+INSERT INTO  Employee (ID, FName, LName, Salary, OfficeNum, jobTitle, empRank, supervisorID)
+VALUES (100, 'e100', 'e100', 100000, 211, 'reg100', 'Regular', 98);
 
 INSERT INTO  Employee (ID, FName, LName, Salary, OfficeNum, jobTitle, empRank, supervisorID)
 VALUES (101, 'e101', 'e101', 100000, 212, 'reg101', 'Regular', 100);
 
 INSERT INTO  Employee (ID, FName, LName, Salary, OfficeNum, jobTitle, empRank, supervisorID)
-VALUES (102, 'e102', 'e102', 100000, 2122, 'div102', 'Division', 101);
+VALUES (102, 'e102', 'e102', 100000, 2122, 'div102', 'Division', 100);
 
 INSERT INTO  Employee (ID, FName, LName, Salary, OfficeNum, jobTitle, empRank, supervisorID)
-VALUES (103, 'e103', 'e103', 100000, 2122, 'gen103', 'General', 101);
+VALUES (103, 'e103', 'e103', 100000, 2122, 'gen103', 'General', 100);
 
 /*	4	*/
 
