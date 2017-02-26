@@ -137,6 +137,15 @@ VALUES (11, 'ICU');
 INSERT INTO RoomService (roomNum, service)
 VALUES (12, 'ICU');
 
+INSERT INTO EquiptmentType (ID, model, description, instructions)
+VALUES ('MRI', 'A MODEL 0', 'A DESCRIPTION 1', 'AN INSTUCTION 4');
+
+INSERT INTO EquiptmentType (ID, model, description, instructions)
+VALUES ('CAT', 'A MODEL 1', 'A DESCRIPTION 2', 'AN INSTUCTION 5');
+
+INSERT INTO EquiptmentType (ID, model, description, instructions)
+VALUES ('DOG', 'A MODEL 2', 'A DESCRIPTION 3', 'AN INSTUCTION 6');
+
 INSERT INTO Equipment (serialNum, TypeID, purchaseYear, LastInspecton, roomNum)
 VALUES ('A01-02X', 'MRI', 2012, '31-AUG-06', 1);
 
@@ -163,15 +172,6 @@ VALUES ('D01-02X', 'MRI', 2011, '31-AUG-06', 7);
 
 INSERT INTO Equipment (serialNum, TypeID, purchaseYear, LastInspecton, roomNum)
 VALUES ('G01-02X', 'MRI', 2010, '31-AUG-06', 3);
-
-INSERT INTO EquiptmentType (ID, model, description, instructions)
-VALUES ('MRI', 'A MODEL 0', 'A DESCRIPTION 1', 'AN INSTUCTION 4');
-
-INSERT INTO EquiptmentType (ID, model, description, instructions)
-VALUES ('MRI', 'A MODEL 1', 'A DESCRIPTION 2', 'AN INSTUCTION 5');
-
-INSERT INTO EquiptmentType (ID, model, description, instructions)
-VALUES ('MRI', 'A MODEL 2', 'A DESCRIPTION 3', 'AN INSTUCTION 6');
 
 INSERT INTO Admission (Num, AdmissionDate, LeaveDate, TotalPayment, InsurancePayment, Patient_SSN)
 VALUES (0, '01-JAN-2013', '02-JAN-2013', 3000, 4000, '000000001');
@@ -334,11 +334,3 @@ VALUES (8, 'E9', 'L1', 3000, 1, 'Employee', 'Regular', 10);
 
 INSERT INTO Employee (ID, FName, LName, Salary, OfficeNum, jobTitle, empRank, supervisorID)
 VALUES (9, 'E10', 'L1', 3000, 1, 'Employee', 'Regular', 10);
-
-
-/*	Test Case for create_views	*/
-INSERT INTO Patient (SSN, FName, LName, Address, TelNum)
-VALUES ('100000001', 'P1', 'Alco', 'Turkey', '8889999898');
-
-INSERT INTO Patient (SSN, FName, LName, Address, TelNum)
-VALUES ('100000002', 'P2', 'Alco', 'Turkey', '8889999899');
