@@ -5,17 +5,27 @@
 	Create View Calls
 	*/
 
-
+Set Serveroutput on
 Create or Replace Trigger ThreeServices
-	Before Insert or Update of roomNum on RoomService
+	Before Insert or Update on RoomService
 	For each row
 	Declare
-		temp Number;
+		temp Integer;
 	Begin
-		Select count(service) into temp 
-			from RoomService RS where RS.roomNum = :new.roomNum 
-			Group By service Having count(service) > 1;
-		If(temp <> null) Then
+		dbms_output.put('Room num ' );
+		dbms_output.put_line(:new.roomNum );
+		Begin
+			Select COUNT(service) into temp
+				from RoomService RS 
+				where RS.roomNum = :new.roomNum 
+				Group By service;
+			EXCEPTION
+	      		WHEN NO_DATA_FOUND THEN
+	        	temp := 0;
+			END;
+
+		dbms_output.put_line(temp);
+		If(temp > 1) Then
 			RAISE_APPLICATION_ERROR(-20000, 'Too many services...');
 		End If;
 
@@ -64,7 +74,7 @@ Create or Replace Trigger MRIPurchaseYear
 	For each row
 	Begin
 		if(:new.TypeID = 'MRI' and (:new.purchaseYear < 2005 or :new.purchaseYear = null) ) Then
-			RAISE_APPLICATION_ERROR(-1, 'MRI error');
+			RAISE_APPLICATION_ERROR(-20003, 'MRI error');
 		end if;
 	End;
 	/

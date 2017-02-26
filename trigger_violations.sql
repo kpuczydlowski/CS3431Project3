@@ -20,8 +20,12 @@ INSERT INTO RoomService (roomNum, service)
 VALUES (2002, 'Defibilator3');
 
 /*	2	*/
+
+INSERT INTO Patient (SSN, FName, LName, Address, TelNum)
+VALUES ('777888992', 'Triggers', 'Alco', 'Turkey', '2889999898');
+
 INSERT INTO Admission (Num, AdmissionDate, LeaveDate, TotalPayment, InsurancePayment, Patient_SSN)
-VALUES (0, '01-JAN-2013', '02-JAN-2013', 3000, 4000, '000000001');
+VALUES (0, '01-JAN-2013', '02-JAN-2013', 3000, 4000, '777888992');
 
 /*	3	*/
 INSERT INTO  Employee (ID, FName, LName, Salary, OfficeNum, jobTitle, empRank, supervisorID)
@@ -34,7 +38,7 @@ INSERT INTO  Employee (ID, FName, LName, Salary, OfficeNum, jobTitle, empRank, s
 VALUES (102, 'e102', 'e102', 100000, 2122, 'div102', 'Division', 101);
 
 INSERT INTO  Employee (ID, FName, LName, Salary, OfficeNum, jobTitle, empRank, supervisorID)
-VALUES (102, 'e102', 'e102', 100000, 2122, 'div102', 'Division', 101);
+VALUES (103, 'e103', 'e103', 100000, 2122, 'gen103', 'General', 101);
 
 /*	4	*/
 
@@ -54,9 +58,11 @@ INSERT INTO StayIn (AdmissionNum, roomNum, startDate, endDate)
 VALUES (100, 200, '21-JAN-2013', null);
 
 /*	5	*/
+INSERT INTO EquiptmentType (ID, model, description, instructions)
+VALUES ('MRI', 'A MODEL 0', 'A DESCRIPTION 1', 'AN INSTUCTION 4');
 
 INSERT INTO Equipment (serialNum, TypeID, purchaseYear, LastInspecton, roomNum)
-VALUES ('A01-02E', 'MRI', 1792, '31-AUG-06', 1);
+VALUES ('A01-02E', 'MRI', 1792, '31-AUG-06', 2002);
 
 /*	6	*/
 
