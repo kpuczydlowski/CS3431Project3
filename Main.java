@@ -27,7 +27,6 @@ public class Main {
                 System.out.println("Patient Address: " + Address);
                 System.out.println("Patient Telephone Number: " + TelNum);
                 System.out.println();
-
             }
         } catch (SQLException e ) {
             System.out.println(e);
@@ -64,7 +63,6 @@ public class Main {
                 System.out.println("Doctor Gender: " + gender);
                 System.out.println("Doctor Speciality: " + Speciality);
                 System.out.println();
-
             }
         } catch (SQLException e ) {
             System.out.println(e);
@@ -108,8 +106,8 @@ public class Main {
                 System.out.println("Leave Date: " + LeaveDate);
                 System.out.println("Total Payment: " + TotalPayment);
                 System.out.println();
-
             }
+            
             System.out.println("Rooms:");
             java.sql.ResultSet rs2 = stmt.executeQuery(query2);
             while (rs2.next()) {
@@ -124,8 +122,6 @@ public class Main {
             while (rs3.next()) {
                 Integer doctorID = rs3.getInt("doctorID");
                 System.out.println("\tDoctorID: " + doctorID );
-
-
             }
 
         } catch (SQLException e ) {
@@ -151,7 +147,6 @@ public class Main {
         try {
             stmt = connection.createStatement();
             java.sql.ResultSet rs = stmt.executeQuery(query);
-
         } catch (SQLException e ) {
             System.out.println(e);
         } finally {
