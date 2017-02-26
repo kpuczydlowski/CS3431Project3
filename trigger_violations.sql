@@ -96,12 +96,12 @@ VALUES (12, 11001, 'c1');
 INSERT INTO Admission (Num, AdmissionDate, LeaveDate, TotalPayment, InsurancePayment, Patient_SSN)
 VALUES (11002, '05-JAN-2013', '06-FEB-2013', 3000, 4000, '777888991');
 
-DROP TRIGGER ThreeServices
-DROP TRIGGER CalculateInsPayment
-DROP TRIGGER Manages
-DROP TRIGGER MRIPurchaseYear
-DROP TRIGGER PrintDoctors
-DROP TRIGGER ICUinThreeMonths
+DROP TRIGGER ThreeServices;
+DROP TRIGGER CalculateInsPayment;
+DROP TRIGGER Manages;
+DROP TRIGGER MRIPurchaseYear;
+DROP TRIGGER PrintDoctors;
+DROP TRIGGER ICUinThreeMonths;
 
 
 /*		*/
