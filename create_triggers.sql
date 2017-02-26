@@ -27,6 +27,7 @@ Create or Replace Trigger CalculateInsPayment
 	For each row
 	Begin
 		:new.InsurancePayment := :new.TotalPayment*0.7;
+		dbms_output.put(:new.InsurancePayment);
 	End;
 	/
 
@@ -39,40 +40,24 @@ Create or Replace Trigger Manages
 		Select empRank into temp from Employee E Where E.ID = :new.supervisorID;
 		If(:new.empRank = 'Regular') Then
 			If (temp <> 'Division') Then
-				RAISE_APPLICATION_ERROR(-20000, 'Not inserted...');
+				RAISE_APPLICATION_ERROR(-20000, 'Not Manages...');
 			End If;
 		End If;
 		If(:new.empRank = 'Division') Then
 			If (temp <> 'General' ) Then
-				RAISE_APPLICATION_ERROR(-20000, 'Not inserted...');
+				RAISE_APPLICATION_ERROR(-20000, 'Not Manages...');
 			End If;
 		End If;
 		If(:new.empRank = 'General') Then
 			If (temp <> 'General' or temp <> null ) Then
-				RAISE_APPLICATION_ERROR(-20000, 'Not inserted...');
+				RAISE_APPLICATION_ERROR(-20000, 'Not Manages...');
 			End If;
 		End If;
 	End;
 	/
 	
 
-Create or Replace Trigger ICUinThreeMonths
-	Before Insert on Admission
-	For each row
-	Declare
-		temp date;
-		temp_s Varchar(30);
-	Begin
-		Select RS.service into temp_s
-		From StayIn SI, RoomService RS
-		Where RS.roomNum = SI.roomNum;
-		If (temp_s = 'ICU') Then
-			temp := Add_months(:new.AdmissionDate, 3);
-			INSERT INTO FutureVisit (visitNum, visitDate)
-			VALUES (:new.Num, temp);
-		End If;
-	End;
-	/
+
 
 Create or Replace Trigger MRIPurchaseYear
 	Before Insert or Update on Equipment
@@ -88,7 +73,7 @@ Create or Replace Trigger PrintDoctors
 	Before Insert on Admission
 	For each row
 	Begin
-		For rec in (Select D.lastName as last, D.firstName as first from Examine E, Doctor D where E.AdmissionNum = :new.Num and E.doctorID = D.ID)
+		For rec in (Select D.lastName as last, D.firstName as first from Examine E, Doctor D where E.AdmissionNum = (Select Num from Admission A where :new.Patient_SSN = A.Patient_SSN) AND E.doctorID = D.ID)
 		loop
 			dbms_output.put(rec.last);
 			dbms_output.put(',	');
@@ -97,3 +82,23 @@ Create or Replace Trigger PrintDoctors
 		end loop;
 	End;
 	/
+
+Create or Replace Trigger ICUinThreeMonths
+	Before Insert on StayIn
+	For each row
+	Declare
+		temp date;
+	Begin
+		For rec in (Select RS.service as serv
+		From RoomService RS
+		Where RS.roomNum = :new.roomNum)
+		loop
+			If (rec.serv = 'ICU') Then
+				temp := Add_months(:new.startDate, 3);
+				INSERT INTO FutureVisit (visitNum, visitDate)
+				VALUES (:new.AdmissionNum, temp);
+				Exit;
+			End If;
+		end loop;
+	End;
+	/	
